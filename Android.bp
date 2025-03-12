@@ -171,23 +171,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libaudioalsa",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libaudioalsa.so"],
-			shared_libs: ["libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "32",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "libaudiocloudctrl",
 	owner: "xiaomi",
 	strip: {
@@ -358,6 +341,23 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+	name: "libmmhardware",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmmhardware.so"],
+			shared_libs: ["libaudioutils", "libcutils", "liblog", "libtinyalsa", "libtinycompress", "libaudioroute", "libexpat", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libqtigef",
 	owner: "xiaomi",
 	strip: {
@@ -456,6 +456,24 @@ cc_prebuilt_library_shared {
 	},
 	compile_multilib: "32",
 	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libxlog",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/vndk/libxlog.so"],
+			shared_libs: ["liblog", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "32",
+	relative_install_path: "vndk",
 	prefer: true,
 	soc_specific: true,
 }
@@ -5832,6 +5850,51 @@ cc_prebuilt_library_shared {
 	},
 	compile_multilib: "64",
 	prefer: true,
+	soc_specific: true,
+}
+
+prebuilt_rfsa {
+	name: "bm2n06",
+	filename: "bm2n06.bin",
+	owner: "xiaomi",
+	src: "proprietary/vendor/lib/rfsa/adsp/bm2n06.bin",
+	relative_install_path: "adsp",
+	soc_specific: true,
+}
+
+prebuilt_rfsa {
+	name: "bm2n08",
+	filename: "bm2n08.bin",
+	owner: "xiaomi",
+	src: "proprietary/vendor/lib/rfsa/adsp/bm2n08.bin",
+	relative_install_path: "adsp",
+	soc_specific: true,
+}
+
+prebuilt_rfsa {
+	name: "bm2n13",
+	filename: "bm2n13.bin",
+	owner: "xiaomi",
+	src: "proprietary/vendor/lib/rfsa/adsp/bm2n13.bin",
+	relative_install_path: "adsp",
+	soc_specific: true,
+}
+
+prebuilt_rfsa {
+	name: "bm2n14",
+	filename: "bm2n14.bin",
+	owner: "xiaomi",
+	src: "proprietary/vendor/lib/rfsa/adsp/bm2n14.bin",
+	relative_install_path: "adsp",
+	soc_specific: true,
+}
+
+prebuilt_rfsa {
+	name: "bm2n15",
+	filename: "bm2n15.bin",
+	owner: "xiaomi",
+	src: "proprietary/vendor/lib/rfsa/adsp/bm2n15.bin",
+	relative_install_path: "adsp",
 	soc_specific: true,
 }
 
