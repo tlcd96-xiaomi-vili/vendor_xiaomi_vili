@@ -624,9 +624,6 @@ PRODUCT_PACKAGES += \
     libcamxswispiqmodule \
     libcamxswprocessalgo \
     libcamxtintlessalgo \
-    libcapiv2svacnn \
-    libcapiv2svarnn \
-    libcapiv2vop \
     libchilog \
     libcom.qti.chinodeutils \
     libcom.xiaomi.debug \
